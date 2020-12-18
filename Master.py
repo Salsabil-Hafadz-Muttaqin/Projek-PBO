@@ -53,17 +53,17 @@ def pendapatan():
 
 
 
-    conn.execute("select max(id_pendapatan) as id from pendapatan")
-    global id
-    type(int(id))
-    if id == 0:
-        id = 0
+    pen = conn.execute("select max(id_pendapatan) from pendapatan")
+    nomer = pen
+    int(nomer)
+    if nomer == 0:
+        return
     else:
-        id += 1
+        nomer = nomer + 1
 
     localtime = time.asctime(time.localtime(time.time()))
 
-    income = pendapatan(id,localtime, input("Masukkan Nominal : "), input("Masukkan Keterangan"))
+    income = pendapatan(nomer,localtime, input("Masukkan Nominal : "), input("Masukkan Keterangan"))
 
     conn.execute("insert into pendapatan values (?,?,?,?)",(self.__id(), self.__tanggal(), self.__jumlah(), self.__keterangan()))
     conn.commit()
