@@ -36,6 +36,7 @@ def login():
                     login()
                 else:
                     print("Selamat Datang Di Aplikasi Manajemen Keuangan")
+                    menu()
 
     class daftar(masuk):
         def __init__(self, username, password, nohandphone):
@@ -97,7 +98,8 @@ def menu():
             else:
                 print("Inputan Salah, Silahkan Menginputkan Ulang")
 
-        print(" >>>>>MENU<<<<<\n [1] Pendapatan\n [2] Pengeluaran\n [3] Hutang\n [4] Piutang\n [5] Budget\n [6] Dana Darurat\n [7] Laporan Keuangan\n [8] Profil")
+    print(" >>>>>MENU<<<<<\n [1] Pendapatan\n [2] Pengeluaran\n [3] Hutang\n [4] Piutang\n [5] Budget\n [6] Dana Darurat\n [7] Laporan Keuangan\n [8] Profil")
+    data = menu.pilih_menu(input("Masukkan Pilihan : "))
 
 while True:
     login()
